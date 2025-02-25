@@ -1,0 +1,225 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1a253f, #000);
+}
+
+/* Galaxy Background Effects */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: -1;
+    animation: star-twinkle 10s infinite;
+}
+
+@keyframes star-twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.nebula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80') no-repeat center center;
+    background-size: cover;
+    filter: blur(10px);
+    opacity: 0.6;
+    z-index: -2;
+}
+
+.planet {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 150px; /* Increased size */
+    height: 150px;
+    background: radial-gradient(circle at 40% 60%, #3d84a8, #092c4c); /* Blue marble-like gradient */
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.5), /* Outer glow */
+        inset 0 -5px 10px rgba(0, 0, 0, 0.5), /* Shadow on the surface */
+        inset 0 5px 15px rgba(255, 255, 255, 0.3); /* Highlight on the surface */
+    animation: rotate 20s infinite linear, pulse 5s infinite alternate;
+}
+
+/* Add a cloud layer for realism */
+.planet::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 50%;
+    opacity: 0.7;
+    filter: blur(5px);
+    animation: clouds 15s infinite linear;
+}
+
+/* Add a moon-like satellite */
+.planet::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #bcbcbc, #666666);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.7), /* Glow around the moon */
+        inset 0 2px 5px rgba(0, 0, 0, 0.5); /* Surface shadow */
+    animation: orbit 10s infinite linear;
+}
+
+/* Rotate animation for the planet */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulse animation for dynamic effect */
+@keyframes pulse {
+    from {
+        box-shadow: 
+            0 0 20px rgba(255, 255, 255, 0.5),
+            inset 0 -5px 10px rgba(0, 0, 0, 0.5),
+            inset 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+    to {
+        box-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.7),
+            inset 0 -10px 20px rgba(0, 0, 0, 0.6),
+            inset 0 10px 25px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Clouds animation */
+@keyframes clouds {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Orbit animation for the moon */
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+
+/* Login Container Styling */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background: transparent;
+    color: white;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+.social-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.social-btn.google {
+    background-color: #db4437;
+}
+
+.social-btn.facebook {
+    background-color: #4267b2;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+    }
+}
