@@ -104,7 +104,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## 📧 Contact
 
 Have questions or suggestions? Feel free to reach out:
-- **Email**: [ehsanizahra.dev@gmail.com]
+- **Email**: (ehsanizahra.dev@gmail.com)
 - **GitHub**: [Ehsanidev](https://github.com/ehsanidev)
 
 ---
