@@ -19,7 +19,7 @@ Welcome to the **Login Page** project repository! This project is a sleek, respo
 
 Here’s a quick preview of the login page in action:
 
-
+![](login-screen.gif)
 
 ---
 
